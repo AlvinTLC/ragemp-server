@@ -1,0 +1,1 @@
+require("./commands/index.js")
