@@ -1,5 +1,10 @@
 const resources = [
     {
+        name: "Player",
+        path: "./resources/player/index.js",
+        active: true,
+    },
+    {
         name: "Commands",
         path: "./resources/commands/index.js",
         active: true,
