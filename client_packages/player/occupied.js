@@ -1,4 +1,4 @@
-let playerLocal = mp.players.local;
+const playerLocal = mp.players.local;
 let occupied = false;
 
 setInterval(() => {
@@ -16,10 +16,10 @@ mp.events.add("render", () => {
         let distance = 3;
         if (distance < 5.0 && playerNearby.getVariable("occupied")) {
             let { x, y, z } = playerNearby.position;
-            mp.game.graphics.drawText("[. . .]", [x, y, z + 0.915], {
-                font: 0,
+            mp.game.graphics.drawText("[. . .]", [x, y, z + 0.905], {
+                font: 4,
                 color: [169, 169, 169, 255],
-                scale: [0.55, 0.55],
+                scale: [0.40, 0.40],
             });
         }
     });
