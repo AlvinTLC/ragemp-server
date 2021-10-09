@@ -1,26 +1,26 @@
-class Time {
-    constructor(zone) {
-        this.zone = zone;
-        this.render();
-    }
+const nameZone = "America/Los_Angeles";
 
-    convert(date, tzString) {
-        return new Date(
-            (typeof date === "string" ? new Date(date) : date).toLocaleString(
-                "en-US",
-                { timeZone: tzString }
-            )
-        );
-    }
+const getTime = (date) => {
+    return new Date(
+        (typeof date === "string" ? new Date(date) : date).toLocaleString(
+            "en-US",
+            { timeZone: nameZone }
+        )
+    );
+};
 
-    render() {
-        this.date = this.convert(new Date(), this.zone);
-        mp.world.time.set(this.date.getHours(), this.date.getMinutes(), 0);
-        setInterval(() => {
-            this.date = this.convert(new Date(), this.zone);
-            mp.world.time.set(this.date.getHours(), this.date.getMinutes(), 0);
-        }, 60000);
-    }
-}
+const setTime = () => {
+    const date = getTime(new Date());
+    mp.world.time.set(date.getHours(), date.getMinutes(), 0);
+};
 
-const time = new Time("America/Los_Angeles");
+const refreshTime = () => {
+    setInterval(() => {
+        setTime();
+    }, 60000);
+};
+
+(() => {
+    setTime();
+    refreshTime();
+})();

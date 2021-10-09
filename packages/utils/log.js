@@ -11,7 +11,7 @@ const BARS = {
 
 class Log {
     static sendConsole(type, message) {
-        const template = `${COLORS[type]}[${type}]${COLORS.RESET} : ${message}`;
+        const template = `${COLORS[type]}[${type}]${COLORS.RESET} ${message}`;
         console.log(template);
     }
     static sendConsoleBar(type) {

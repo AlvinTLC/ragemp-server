@@ -1,4 +1,6 @@
 const request = require("request");
+const nameZone = "Los Angeles, CA";
+const halfHourInMilliseconds = 1_800_000
 
 const WEATHER_VALUES = {
     Sunny: "EXTRASUNNY",
@@ -10,33 +12,28 @@ const WEATHER_VALUES = {
     Fog: "FOGGY",
 };
 
-class Weather {
-    constructor(city) {
-        this.city = city;
-        this.get();
-        this.render();
-    }
-
-    get() {
-        request(
-            `http://api.weatherapi.com/v1/current.json?key=dc465e81fdd5444dade164858211709&q=${this.city}`,
-            (error, response, data) => {
-                if (dataFixed) {
-                    const dataFixed = JSON.parse(data);
-                    mp.world.setWeatherTransition(
-                        WEATHER_VALUES[dataFixed.current.condition.text] || RAIN,
-                        30000
-                    );
-                }
+const setWeather = () => {
+    request(
+        `http://api.weatherapi.com/v1/current.json?key=dc465e81fdd5444dade164858211709&q=${nameZone}`,
+        (error, response, data) => {
+            if (data) {
+                const dataFixed = JSON.parse(data);
+                mp.world.setWeatherTransition(
+                    WEATHER_VALUES[dataFixed.current.condition.text] || RAIN,
+                    30000
+                );
             }
-        );
-    }
+        }
+    );
+};
 
-    render() {
-        setInterval(() => {
-            this.get();
-        }, 60000);
-    }
-}
+const refreshWeather = () => {
+    setInterval(() => {
+        setWeather();
+    },  halfHourInMilliseconds);
+};
 
-const weather = new Weather("Los Angeles, CA");
+(() => {
+    setWeather();
+    refreshWeather();
+})();

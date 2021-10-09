@@ -1,5 +1,4 @@
-
-const {fixPosition} = require("./utils/screen.js")
+const { fixPosition } = require("./utils/screen.js");
 
 const draw2D = ({
     text = "undefined",
@@ -25,5 +24,5 @@ const draw2D = ({
 };
 
 exports = {
-    draw2D
-}
+    draw2D,
+};

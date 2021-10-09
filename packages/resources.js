@@ -19,6 +19,11 @@ const resources = [
         path: "./resources/time/index.js",
         active: true,
     },
+    {
+        name: "Entities",
+        path: "./resources/entities/index.js",
+        active: true,
+    },
 ];
 
 module.exports = resources;

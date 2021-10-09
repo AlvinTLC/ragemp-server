@@ -4,10 +4,10 @@ let occupied = false;
 setInterval(() => {
     if (mp.gui.cursor.visible && !occupied) {
         occupied = true;
-        mp.events.callRemote("server:occupied:set", true);
+        mp.events.callRemote("server:player:events:setVariable", "occupied", true);
     } else if (!mp.gui.cursor.visible && occupied) {
         occupied = false;
-        mp.events.callRemote("server:occupied:set", false);
+        mp.events.callRemote("server:player:events:setVariable", "occupied", false);
     }
 }, 1000);
 

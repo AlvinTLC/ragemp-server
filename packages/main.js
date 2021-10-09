@@ -1,7 +1,7 @@
 "use strict";
 
 const mongoose = require("mongoose");
-const config = require("./config/index.js");
+const DATABASE = require("./config/database.js");
 const resources = require("./resources.js");
 const Log = require("./utils/log.js");
 
@@ -15,7 +15,8 @@ const runScripts = () => {
 
 const runServer = async () => {
     try {
-        await mongoose.connect(config.database.url, {
+        Log.sendConsole("INFO", "Connecting to database...");
+        await mongoose.connect(DATABASE.URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
