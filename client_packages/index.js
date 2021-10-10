@@ -3,6 +3,8 @@ require("./player/healthRecharge.js");
 require("./player/camera.js");
 require("./player/occupied.js");
 
+require("./ui/chat/index.js");
+
 require("./ui/native/radar.js");
 require("./ui/native/pause.js");
 require("./ui/native/components.js");
