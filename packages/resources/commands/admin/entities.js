@@ -8,7 +8,8 @@ mp.events.addCommand("gets.blip", async (player, args, limit) => {
         return;
     }
     const { getBlips } = require("../../entities/blip.js");
-    const blips = await getBlips();
+    let blips = await getBlips();
+    blips = limit != null && limit > 0 ? blips.slice(0, limit) : blips;
     blips.forEach((blip) => {
         Chat.sendSuccess(player, blip._id + " " + blip.label);
     });
