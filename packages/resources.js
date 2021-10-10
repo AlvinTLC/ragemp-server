@@ -11,12 +11,12 @@ const resources = [
     },
     {
         name: "Weather",
-        path: "./resources/weather/index.js",
+        path: "./resources/world/weather/index.js",
         active: true,
     },
     {
         name: "Time",
-        path: "./resources/time/index.js",
+        path: "./resources/world/time/index.js",
         active: true,
     },
     {
