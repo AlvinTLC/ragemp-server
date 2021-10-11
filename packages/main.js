@@ -1,5 +1,3 @@
-"use strict";
-
 const mongoose = require("mongoose");
 const DATABASE = require("./config/database.js");
 const resources = require("./resources.js");
@@ -13,7 +11,7 @@ const runScripts = () => {
     Log.sendConsole("INFO", `${activeResources.length} resources loaded`);
 };
 
-const runServer = async () => {
+(async () => {
     try {
         Log.sendConsole("INFO", "Connecting to database...");
         await mongoose.connect(DATABASE.URL, {
@@ -26,6 +24,4 @@ const runServer = async () => {
     } catch (error) {
         Log.sendConsole("ERROR", error.message);
     }
-};
-
-runServer();
+})();
