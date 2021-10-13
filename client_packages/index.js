@@ -2,6 +2,7 @@ require("./player/weaponRagdoll.js");
 require("./player/healthRecharge.js");
 require("./player/camera.js");
 require("./player/occupied.js");
+require("./player/ping.js");
 
 require("./ui/chat/index.js");
 
