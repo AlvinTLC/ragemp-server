@@ -1,23 +1,24 @@
 const COLORS = {
-    RESET: "\x1b[0m",
-    ERROR: "\x1b[31m",
-    INFO: "\x1b[33m",
-    DONE: "\x1b[32m",
+  RESET: "\x1b[0m",
+  ERROR: "\x1b[31m",
+  INFO: "\x1b[33m",
+  DONE: "\x1b[32m",
+  SERVER: "\x1B[35m",
 };
 
 const BARS = {
-    NORMAL: "[============================================================]",
+  NORMAL: "[============================================================]",
 };
 
-class Log {
-    static sendConsole(type, message) {
-        const template = `${COLORS[type]}[${type}]${COLORS.RESET} ${message}`;
-        console.log(template);
-    }
-    static sendConsoleBar(type) {
-        const template = `${COLORS.INFO}${BARS[type]}${COLORS.RESET}`;
-        console.log(`\n${template}\n \n`);
-    }
-}
+const sendLog = (type, message) => {
+  const color = COLORS[type];
+  const template = `${COLORS.SERVER}[S]${color}[${type}]${COLORS.RESET} ${message}`;
+  console.log(template);
+};
+const sendBar = (type) => {
+  const barType = BARS[type];
+  const template = `${COLORS.INFO}${barType}${COLORS.RESET}`;
+  console.log(`\n${template}\n \n`);
+};
 
-module.exports = Log;
+module.exports = { sendLog, sendBar };
