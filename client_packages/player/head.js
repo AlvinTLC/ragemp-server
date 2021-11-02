@@ -5,13 +5,10 @@ const playerFlags = {
 };
 let playerText = "";
 
-let occupied = false;
 setInterval(() => {
-  if (mp.gui.cursor.visible && !occupied) {
-    occupied = true;
+  if (mp.gui.cursor.visible && !playerNearby.getVariable("occupied")) {
     mp.events.callRemote("server:player:events:setVariable", "occupied", true);
-  } else if (!mp.gui.cursor.visible && occupied) {
-    occupied = false;
+  } else if (!mp.gui.cursor.visible && playerNearby.getVariable("occupied")) {
     mp.events.callRemote("server:player:events:setVariable", "occupied", false);
   }
 }, 1000);
