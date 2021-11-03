@@ -1,0 +1,27 @@
+{
+  "name": "ragemp-server",
+  "version": "0.0.1",
+  "description": "gamemode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Germancitoz/ragemp-server.git"
+  },
+  "keywords": [
+    "ragemp"
+  ],
+  "author": "Germancito",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Germancitoz/ragemp-server/issues"
+  },
+  "homepage": "https://github.com/Germancitoz/ragemp-server#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mongoose": "^6.0.12",
+    "request": "^2.88.2"
+  }
+}
