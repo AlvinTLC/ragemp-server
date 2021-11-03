@@ -1,0 +1,10 @@
+{
+  "name": "dev",
+  "port": 22005,
+  "maxplayers": 1,
+  "gamemode": "roleplay",
+  "language": "es",
+  "stream-distance": 1000.0,
+  "announce": false,
+  "csharp": "disabled"
+}
