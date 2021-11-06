@@ -1,4 +1,5 @@
 const player = mp.players.local;
+
 const blacklistedWeapons = [
   416676503, 3337201093, 860033945, 970310034, 1159398588, 3082541095,
   2725924767,
