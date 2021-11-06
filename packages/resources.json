@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Time",
+    "path": "./resources/world/time/index.js",
+    "active": true
+  },
+  {
+    "name": "Weather",
+    "path": "./resources/world/weather/index.js",
+    "active": true
+  }
+]
