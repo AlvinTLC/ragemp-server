@@ -121,7 +121,16 @@ mp.events.add("render", function () {
   );
 });
 
+const toggleNoclip = () => {
+  isNoClip = !isNoClip;
+  mp.game.ui.displayRadar(!isNoClip);
+  if (isNoClip) {
+    startNoClip();
+  } else {
+    stopNoClip();
+  }
+};
+
 exports = {
-  startNoClip,
-  stopNoClip,
+  toggleNoclip,
 };

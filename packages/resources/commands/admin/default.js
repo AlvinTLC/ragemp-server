@@ -21,3 +21,7 @@ mp.events.addCommand("car", (player, args, car) => {
   });
   player.putIntoVehicle(carSpawned, 0);
 });
+
+mp.events.addCommand("noclip", (player) => {
+  player.call("client_packages/player/admin/events//toggleNoclip");
+});
