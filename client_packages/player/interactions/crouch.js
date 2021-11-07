@@ -22,6 +22,7 @@ mp.events.add("render", () => {
   if (crouching) {
     mp.game.controls.disableControlAction(0, 0, true); //VKey (camera)
     mp.game.controls.disableControlAction(0, 22, true); //SpaceKey
+
     if (!player.isOnFoot()) {
       player.resetMovementClipset(config.clipSetSwitchTime);
       player.resetStrafeClipset();
