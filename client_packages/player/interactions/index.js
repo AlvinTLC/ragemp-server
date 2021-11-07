@@ -1,3 +1,3 @@
-require("./player/changeCamera.js");
-require("./player/disableWeaponRagdoll.js");
-require("./player/crouch.js");
+require("./player/interactions/changeCamera.js");
+require("./player/interactions/disableWeaponRagdoll.js");
+require("./player/interactions/crouch.js");
