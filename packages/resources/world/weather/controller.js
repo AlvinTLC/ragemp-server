@@ -10,6 +10,7 @@ const WEATHER_VALUES = {
   Blizzard: "BLIZZARD",
   Fog: "FOGGY",
 };
+let currentWeather = undefined;
 
 const setWeather = () => {
   request(
@@ -17,13 +18,17 @@ const setWeather = () => {
     (error, response, data) => {
       if (data) {
         const dataFixed = JSON.parse(data);
-        mp.world.setWeatherTransition(
-          WEATHER_VALUES[dataFixed.current.condition.text] || RAIN,
-          30000
-        );
+        currentWeather =
+          WEATHER_VALUES[dataFixed.current.condition.text] || RAIN;
+
+        mp.world.setWeatherTransition(currentWeather, 30000);
       }
     }
   );
+};
+
+const getWeather = () => {
+  return currentWeather;
 };
 
 const refreshWeather = () => {
@@ -36,3 +41,7 @@ const refreshWeather = () => {
   setWeather();
   refreshWeather();
 })();
+
+module.exports = {
+  getWeather,
+};
