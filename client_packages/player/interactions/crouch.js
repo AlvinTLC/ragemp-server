@@ -30,7 +30,7 @@ mp.events.add("render", () => {
   }
 });
 
-mp.events.add("render", () => {
+mp.events.add("render", async () => {
   if (mp.game.controls.isControlJustReleased(0, 60) && canCrouch()) {
     if (crouching) {
       player.resetMovementClipset(config.clipSetSwitchTime);

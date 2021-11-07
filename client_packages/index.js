@@ -1,11 +1,11 @@
 //PLAYER
-require("./player/changeCamera.js");
-require("./player/disableWeaponRagdoll.js");
-require("./player/crouch.js");
+
+require("./player/admin/index.js");
+require("./player/interactions/index.js");
 
 //UI
 require("./ui/native/pauseMenu.js");
 require("./ui/native/components.js");
 
 //SERVICES
-require("./services/discord.js");
+require("./services/index.js");
