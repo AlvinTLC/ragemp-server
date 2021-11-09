@@ -1,5 +1,10 @@
 [
   {
+    "name": "User",
+    "path": "./resources/user/index.js",
+    "active": true
+  },
+  {
     "name": "Time",
     "path": "./resources/world/time/index.js",
     "active": true
