@@ -41,8 +41,7 @@ mp.events.add(
 );
 
 mp.events.add("playerQuit", async (player) => {
-  const isLogged = player.getVariable("user").name ? true : false;
-  if (isLogged) {
+  if (player.getVariable("user")) {
     await saveUser(player);
   }
 });
